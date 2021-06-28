@@ -210,7 +210,7 @@ resource "auth0_connection" "username-password-connection" {
     password_policy = "good"
     password_history {
       enable = true
-      size = 4
+      size = 5
     }
     password_dictionary {
       enable = true
