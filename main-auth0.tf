@@ -214,6 +214,7 @@ resource "auth0_connection" "username-password-connection" {
     }
     password_dictionary {
       enable = true
+      dictionary = []
     }
     password_no_personal_info {
       enable = true
@@ -221,6 +222,15 @@ resource "auth0_connection" "username-password-connection" {
     enabled_database_customization = false
 
     client_id = auth0_client.bank.id
+
+    allowed_audiences = []
+    configuration = {}
+    custom_scripts = {}
+    domain_aliases = []
+    fields_map = {}
+    ips = []
+    scopes = []
+    scripts = {}
   }
 }
 
