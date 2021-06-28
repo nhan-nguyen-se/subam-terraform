@@ -1,5 +1,5 @@
-variable "AUTH0_DOMAIN" {
-  description = "Auth0 domain environment variable"
+variable "auth0-domain" {
+  description = "Auth0 domain"
 }
 
 variable "bank-be-identifier" {

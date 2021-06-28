@@ -36,7 +36,7 @@ resource "auth0_client" "subam" {
 
 resource "auth0_resource_server" "management" {
   name = "Auth0 Management API"
-  identifier = "https://${var.AUTH0_DOMAIN}/api/v2/"
+  identifier = "https://${var.auth0-domain}/api/v2/"
   allow_offline_access = false
   enforce_policies = false
   signing_alg = "RS256"
