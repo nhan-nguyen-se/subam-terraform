@@ -173,6 +173,7 @@ resource "auth0_client_grant" "mgmt-bank" {
   client_id = auth0_client.bank.id
   audience  = auth0_resource_server.management.identifier
   scope     = [
+    "read:resource_servers",
     "read:users", "update:users", "create:users",
     "read:users_app_metadata", "update:users_app_metadata", "delete:users_app_metadata", "create:users_app_metadata",
     "read:user_custom_blocks", "create:user_custom_blocks", "delete:user_custom_blocks",
