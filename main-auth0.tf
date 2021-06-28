@@ -36,7 +36,7 @@ resource "auth0_client" "subam" {
 
 resource "auth0_resource_server" "management" {
   name = "Auth0 Management API"
-  identifier = "https://subam-dev.us.auth0.com/api/v2/"
+  identifier = "https://${var.AUTH0_DOMAIN}/api/v2/"
   allow_offline_access = false
   enforce_policies = false
   signing_alg = "RS256"
@@ -89,7 +89,7 @@ resource "auth0_client" "bank" {
 
 resource "auth0_resource_server" "bank-be" {
   name        = "Bank Backend"
-  identifier  = "https://subam.com/dev/bank/api"
+  identifier  = var.bank-be-identifier
   signing_alg = "RS256"
   allow_offline_access = true
   token_lifetime = 3600
@@ -237,6 +237,6 @@ resource "auth0_connection" "username-password-connection" {
 resource "auth0_tenant" "tenant" {
   default_audience  = auth0_resource_server.management.identifier
   default_directory = auth0_connection.username-password-connection.name
-  friendly_name = "Subam Solutions Dev"
+  friendly_name = var.subam-tenant-friendly-name
   enabled_locales = ["en"]
 }
