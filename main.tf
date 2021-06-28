@@ -4,7 +4,7 @@ terraform {
     organization = "subam"
 
     workspaces {
-      name = "subam-terraform"
+      name = "subam-terraform-${var.env}"
     }
   }
 }
