@@ -57,6 +57,7 @@ resource "auth0_client_grant" "mgmt-subam" {
     "read:connections", "update:connections", "create:connections",
     "read:resource_servers", "update:resource_servers", "create:resource_servers",
     "read:tenant_settings", "update:tenant_settings",
+    "read:roles", "create:roles", "delete:roles", "update:roles",
   ]
 }
 
